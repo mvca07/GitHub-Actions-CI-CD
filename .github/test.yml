@@ -1,47 +1,38 @@
-orbs:
-  cypress: cypress-io/cypress@3.3.1
+# Name of workflow
+name: Lint and Test workflow
 
+# Trigger workflow on all pull requests
+on:
+  pull_request:
+    branches:
+      - develop
+
+# Jobs to carry out
 jobs:
-  start-server:
-    docker:
-      - image: cypress/base:latest
-    steps:
-      - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
-      - run:
-          name: Start the server
-          command: npm start &
-      - run:
-          name: Wait for server to be ready
-          command: npx wait-on http://localhost:3001
-      - run:
-          name: Build the app
-          command: npm run build
+  test:
+    # Operating system to run job on
+    runs-on: ubuntu-latest
 
-workflows:
-  run-tests-and-deploy-to-staging-hold-then-production:
-    jobs:
-      - start-server
-      - cypress/run:
-          name: run-component-tests
-          cypress-command: npx cypress run --component
-          requires:
-            - start-server
-      - deploy-to-render-staging:
-          requires:
-            - run-component-tests
-          filters:
-            branches:
-              only: main
-      - hold:
-          type: approval
-          requires:
-            - deploy-to-render-staging
-      - deploy-to-render-production:
-          requires:
-            - hold
-          filters:
-            branches:
-              only: main
+    # Steps in job
+    steps:
+      # Get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Use Node.js 21.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 21.x
+
+      # Install dependencies
+      - name: 🧰 Install Deps
+        run: npm install
+
+      # Run build
+      - name: Run Build
+        run: npm run build
+
+      # Run tests
+      - name: Run Tests
+        run: npm run test-component
+        
