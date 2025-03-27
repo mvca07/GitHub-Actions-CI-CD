@@ -1,8 +1,11 @@
 # Name of workflow
-name: Lint and Test workflow
+name: Deploy to render
 
 # Trigger workflow on all pull requests
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
