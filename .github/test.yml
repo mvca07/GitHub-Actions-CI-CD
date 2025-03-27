@@ -5,7 +5,7 @@ name: Lint and Test workflow
 on:
   pull_request:
     branches:
-      - develop
+      - Develop
 
 # Jobs to carry out
 jobs:
