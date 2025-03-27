@@ -1,6 +1,6 @@
 # Challenge-20-GitHub-Actions-CI/CD
   ## Description
-
+Our task is to take starter code and create a CI/CD pipeline using GitHub Actions to run the component tests
    
   ## Table of Contents
   * [User Story](#aserStory)
@@ -9,7 +9,7 @@
   * [Testing](#testing) 
   * [Contributors](#contributors)
   * [Questions](#questions)
-  * [Web Site](#webite)
+  * [Assets](#assets)
   ## User Story
 
  ```md
@@ -46,4 +46,5 @@ THEN I should see that another GitHub Action triggers and should automatically d
   
   ## Questions
   Please send your questions [here](mailto:mvca07@gmail.com?subject=[GitHub]%20Dev%20Connect) or visit [github/mvca07](https://github.com/mvca07
-  ## Website
+  ## Assets
+[Assets](https://github.com/mvca07/GitHub-Actions-CI-CD/tree/main/Assets)
