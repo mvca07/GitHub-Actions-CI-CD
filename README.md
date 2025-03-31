@@ -6,7 +6,6 @@ Our task is to take starter code and create a CI/CD pipeline using GitHub Action
   * [User Story](#aserStory)
   * [Acceptance Criteria](#acceptanceCriteria)
   * [Technical Requirements](#technicalRequirements)
-  * [Testing](#testing) 
   * [Contributors](#contributors)
   * [Questions](#questions)
   * [Assets](#assets)
@@ -35,11 +34,6 @@ THEN I should see that another GitHub Action triggers and should automatically d
 
   - Microsoft Visual Studio Code
   - Github
-
-  ## Testing
-  From the directory where the repo is installed run:
-        ```
-        ```
   
   ## Contributors
   Mateo Velasquez
